@@ -1,51 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Área de diagnósticos e propostas da Lean Company." />
-  <meta name="robots" content="noindex,nofollow,noarchive" />
-  <meta name="theme-color" content="#355b7a" />
-  <title>Lean Company | Diagnósticos e propostas</title>
-  <link rel="icon" href="assets/lean-symbol.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferramentas | Lean Company</title>
+  <meta name="description" content="Central de ferramentas da Lean Company.">
+  <style>
+    :root{
+      --bg:#f4f7f9;
+      --card:#ffffff;
+      --text:#17324a;
+      --muted:#617487;
+      --accent:#e6a84a;
+      --accent-dark:#c88a2d;
+      --line:#dce4ea;
+      --shadow:0 14px 40px rgba(20,45,65,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 90% 10%, rgba(230,168,74,.14), transparent 28%),
+        linear-gradient(135deg,#eef4f7 0%,#f8fafb 52%,#edf3f6 100%);
+    }
+    .wrap{
+      width:min(1080px, calc(100% - 32px));
+      margin:42px auto;
+    }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,#173b56,#244d69);
+      border-radius:24px;
+      padding:42px 42px 36px;
+      color:white;
+      box-shadow:var(--shadow);
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:340px;height:340px;
+      right:-150px;top:-170px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:50%;
+      box-shadow:0 0 0 55px rgba(255,255,255,.025),
+                 0 0 0 110px rgba(255,255,255,.02);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      position:relative;
+      z-index:1;
+    }
+    .brand img{
+      width:190px;
+      max-width:55vw;
+      height:auto;
+      object-fit:contain;
+    }
+    .eyebrow{
+      margin:34px 0 8px;
+      color:#f0c276;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(38px,6vw,66px);
+      line-height:.98;
+      letter-spacing:-2px;
+      position:relative;
+      z-index:1;
+    }
+    .intro{
+      max-width:690px;
+      margin:20px 0 0;
+      color:#dce8ef;
+      font-size:18px;
+      line-height:1.6;
+      position:relative;
+      z-index:1;
+    }
+    .tools{
+      margin-top:22px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .tools-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .tools-head h2{margin:0;font-size:25px}
+    .status{margin:0;color:var(--muted);font-size:14px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px;
+    }
+    .tool{
+      display:block;
+      text-decoration:none;
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:20px;
+      background:#fff;
+      transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .tool:hover{
+      transform:translateY(-3px);
+      border-color:#c9d5dd;
+      box-shadow:0 10px 24px rgba(20,45,65,.09);
+    }
+    .icon{
+      width:44px;height:44px;
+      display:grid;place-items:center;
+      border-radius:12px;
+      background:#fff4df;
+      color:#9a681f;
+      font-size:21px;
+      margin-bottom:13px;
+    }
+    .tool h3{margin:0 0 7px;font-size:18px}
+    .tool p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+    .arrow{
+      margin-top:15px;
+      color:var(--accent-dark);
+      font-size:13px;
+      font-weight:700;
+    }
+    .empty,.error{
+      color:var(--muted);
+      padding:20px 4px;
+      line-height:1.5;
+    }
+    footer{
+      text-align:center;
+      color:#718391;
+      font-size:12px;
+      padding:22px 0 8px;
+    }
+    @media (max-width:600px){
+      .wrap{width:min(100% - 18px,1080px);margin:10px auto 22px}
+      .hero{padding:30px 24px 28px;border-radius:18px}
+      .tools{padding:20px;border-radius:18px}
+      .tools-head{display:block}
+      .status{margin-top:7px}
+    }
+  </style>
 </head>
 <body>
-  <main class="shell">
-    <img class="symbol-bg" src="assets/lean-symbol.png" alt="" aria-hidden="true" />
-
-    <section class="card" aria-labelledby="page-title">
-      <img class="logo" src="assets/lean-logo.png" alt="Lean Company — Soluções em Gestão" />
-
-      <span class="eyebrow">Área reservada</span>
-      <h1 id="page-title">Diagnósticos e propostas</h1>
-      <p class="lead">
-        O acesso aos materiais é realizado exclusivamente pelo link encaminhado pela equipe da Lean Company.
-      </p>
-
-      <div class="divider"></div>
-
-      <p class="support">Precisa falar conosco ou solicitar novamente o seu link?</p>
-
-      <div class="actions">
-        <a class="button primary" href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20acessar%20uma%20proposta%20da%20Lean%20Company." target="_blank" rel="noopener noreferrer">
-          Falar pelo WhatsApp
-        </a>
-        <a class="button secondary" href="https://leancompany.com.br/" target="_blank" rel="noopener noreferrer">
-          Conhecer a Lean Company
-        </a>
+  <main class="wrap">
+    <section class="hero">
+      <div class="brand">
+        <img src="assets/lean-logo.png" alt="Lean Company">
       </div>
 
-      <nav class="links" aria-label="Links institucionais">
-        <a href="https://www.instagram.com/leancompanybrasil/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <span aria-hidden="true">•</span>
-        <a href="https://leancompany.com.br/" target="_blank" rel="noopener noreferrer">Website</a>
-        <span aria-hidden="true">•</span>
-        <a href="https://wa.me/5544999061699" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      </nav>
+      <div class="eyebrow">Área interna</div>
+      <h1>Ferramentas</h1>
+      <p class="intro">
+        Central de acesso às ferramentas da Lean Company.
+        As ferramentas ficam organizadas em pastas e aparecem automaticamente nesta página.
+      </p>
     </section>
 
-    <footer>Lean Company · Soluções em Gestão · Maringá, Paraná</footer>
+    <section class="tools">
+      <div class="tools-head">
+        <div>
+          <h2>Minhas ferramentas</h2>
+          <p class="status" id="status">Carregando ferramentas...</p>
+        </div>
+      </div>
+
+      <div class="grid" id="tools"></div>
+      <div class="empty" id="empty" hidden>
+        Nenhuma ferramenta foi encontrada.
+      </div>
+      <div class="error" id="error" hidden>
+        Não foi possível carregar a lista automaticamente.
+        Você ainda pode acessar uma ferramenta diretamente pelo endereço
+        <strong>ferramentas.leancompany.com.br/nome-da-pasta</strong>.
+      </div>
+    </section>
+
+    <footer>
+      Lean Company · Central de Ferramentas
+    </footer>
   </main>
+
+  <script>
+    /*
+      A lista é lida diretamente do GitHub.
+      Sempre que você criar uma NOVA PASTA na raiz do repositório,
+      ela poderá aparecer aqui automaticamente, sem editar este HTML.
+
+      Repositório: leanco-propostas/ferramentas
+    */
+    const API = "https://api.github.com/repos/leanco-propostas/ferramentas/contents/";
+    const EXCLUDED = new Set(["assets", ".github"]);
+
+    const icons = ["🔎","📊","🧰","⚙️","📄","📈","🗂️","🧮"];
+
+    function titleFromFolder(name) {
+      return name
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function descriptionFor(name) {
+      const descriptions = {
+        cnpj: "Consulta e análise da ferramenta de CNPJ.",
+      };
+      return descriptions[name.toLowerCase()] ||
+             "Acesse esta ferramenta da Lean Company.";
+    }
+
+    async function loadTools() {
+      const grid = document.getElementById("tools");
+      const status = document.getElementById("status");
+      const empty = document.getElementById("empty");
+      const error = document.getElementById("error");
+
+      try {
+        const response = await fetch(API, {
+          headers: { "Accept": "application/vnd.github+json" },
+          cache: "no-store"
+        });
+
+        if (!response.ok) throw new Error("GitHub API: " + response.status);
+
+        const items = await response.json();
+
+        const folders = items
+          .filter(item => item.type === "dir" && !EXCLUDED.has(item.name))
+          .sort((a,b) => a.name.localeCompare(b.name, "pt-BR"));
+
+        if (!folders.length) {
+          status.textContent = "Nenhuma ferramenta cadastrada ainda.";
+          empty.hidden = false;
+          return;
+        }
+
+        status.textContent = `${folders.length} ferramenta${folders.length === 1 ? "" : "s"} disponível${folders.length === 1 ? "" : "eis"}.`;
+
+        folders.forEach((folder, index) => {
+          const a = document.createElement("a");
+          a.className = "tool";
+          a.href = "./" + encodeURIComponent(folder.name) + "/";
+          a.innerHTML = `
+            <div class="icon">${icons[index % icons.length]}</div>
+            <h3>${titleFromFolder(folder.name)}</h3>
+            <p>${descriptionFor(folder.name)}</p>
+            <div class="arrow">Abrir ferramenta →</div>
+          `;
+          grid.appendChild(a);
+        });
+
+      } catch (err) {
+        console.error(err);
+        status.textContent = "Lista automática indisponível.";
+        error.hidden = false;
+
+        // Fallback: mantém a ferramenta CNPJ acessível mesmo se a API do GitHub estiver indisponível.
+        const a = document.createElement("a");
+        a.className = "tool";
+        a.href = "./cnpj/";
+        a.innerHTML = `
+          <div class="icon">🔎</div>
+          <h3>CNPJ</h3>
+          <p>Consulta e análise da ferramenta de CNPJ.</p>
+          <div class="arrow">Abrir ferramenta →</div>
+        `;
+        grid.appendChild(a);
+      }
+    }
+
+    loadTools();
+  </script>
 </body>
 </html>
