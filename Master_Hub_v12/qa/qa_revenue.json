@@ -1,0 +1,79 @@
+{
+  "tabs": [
+    "Visão Geral",
+    "Guias",
+    "Clientes",
+    "Lojas",
+    "Segmentos"
+  ],
+  "five_tabs": true,
+  "advanced_toggle": true,
+  "comparison_explicit": true,
+  "concentration_4": true,
+  "pages": {
+    "guides": {
+      "cards": 6,
+      "headers": [
+        "Guia",
+        "Faturamento",
+        "Representatividade",
+        "Acumulado",
+        "Curva",
+        "Nº clientes",
+        "Nº faturamentos",
+        "Nº lojas"
+      ],
+      "abc": true
+    },
+    "customers": {
+      "cards": 6,
+      "headers": [
+        "Cliente",
+        "Faturamento",
+        "Representatividade",
+        "Acumulado",
+        "Curva",
+        "Categoria",
+        "Nº lojas",
+        "Nº faturamentos"
+      ],
+      "abc": true
+    },
+    "stores": {
+      "cards": 6,
+      "headers": [
+        "Loja",
+        "Segmento",
+        "Faturamento",
+        "Representatividade",
+        "Acumulado",
+        "Curva",
+        "Nº clientes",
+        "Nº Guias",
+        "Nº faturamentos"
+      ],
+      "abc": true
+    },
+    "segments": {
+      "cards": 6,
+      "headers": [
+        "Segmento",
+        "Faturamento",
+        "Representatividade",
+        "Acumulado",
+        "Curva",
+        "Nº clientes",
+        "Nº Guias",
+        "Nº faturamentos",
+        "Nº lojas"
+      ],
+      "abc": true
+    }
+  },
+  "customer_detail": true,
+  "guide_drawer": true,
+  "customer_drawer": true,
+  "store_drawer": true,
+  "segment_drawer": true,
+  "errors": []
+}

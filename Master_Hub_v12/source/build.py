@@ -1,0 +1,15 @@
+import json,re,pathlib
+root=pathlib.Path('/mnt/data/master_hub_v12_source')
+source_v11=pathlib.Path('/mnt/data/Master_Hub_v11_Integrado.html').read_text(encoding='utf-8')
+m=re.search(r'const LOGO=(\"data:image/png;base64,[A-Za-z0-9+/=]+\")',source_v11)
+if not m:
+    raise SystemExit('LOGO not found')
+logo=m.group(1)
+data=json.dumps(json.loads((root/'data.json').read_text(encoding='utf-8')),ensure_ascii=False,separators=(',',':'))
+css=(root/'styles.css').read_text(encoding='utf-8')
+js=(root/'app.js').read_text(encoding='utf-8')
+tpl=(root/'index.template.html').read_text(encoding='utf-8')
+html=tpl.replace('__CSS__',css).replace('__DATA__',data).replace('__LOGO__',logo).replace('__JS__',js)
+out=pathlib.Path('/mnt/data/Master_Hub_v12_Integrado.html')
+out.write_text(html,encoding='utf-8')
+print(out, out.stat().st_size)

@@ -1,0 +1,42 @@
+{
+  "credit_tabs": [
+    "Visão Geral",
+    "Clientes",
+    "Guias"
+  ],
+  "credit_cards": 6,
+  "saturation": true,
+  "risk_toggle": true,
+  "rule_explain": true,
+  "credit_advanced": 11,
+  "credit_context": true,
+  "ratio_x": true,
+  "credit_customer_drawer": true,
+  "credit_guide_drawer": true,
+  "invariants": {
+    "extra": 0,
+    "risk": 2.9103830456733704e-11,
+    "total": 0
+  },
+  "extra_tabs": [
+    "Visão Geral",
+    "Movimentações",
+    "Clientes",
+    "Guias"
+  ],
+  "effect_method": true,
+  "effect_complete_logic": {
+    "events": 133,
+    "incomplete": 68,
+    "bad": 0,
+    "withOther": 97
+  },
+  "effect_drawer": true,
+  "mov_cards": 6,
+  "mov_table": true,
+  "extra_customer_history": true,
+  "extra_customer_expected_moves": 4,
+  "extra_customer_drawer_rows": 4,
+  "extra_guide_drawer": true,
+  "errors": []
+}

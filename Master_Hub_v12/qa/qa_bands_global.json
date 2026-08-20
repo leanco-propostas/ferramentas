@@ -1,0 +1,104 @@
+{
+  "bands_tabs": [
+    "Visão Geral",
+    "Clientes"
+  ],
+  "overview_cards": 6,
+  "overview_no_full_table": true,
+  "matrix": true,
+  "initial_final_explained": true,
+  "customers_chart": true,
+  "metric_toggle": true,
+  "table": true,
+  "table_toggle": true,
+  "bands_detail": true,
+  "bands_drawer": true,
+  "executive_accessible": true,
+  "customer_accessible": true,
+  "all_pages_global_pattern": {
+    "revenue": [
+      {
+        "tab": "overview",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "guides",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "customers",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "stores",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "segments",
+        "toggle": true,
+        "cards": 6
+      }
+    ],
+    "credit": [
+      {
+        "tab": "overview",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "customers",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "guides",
+        "toggle": true,
+        "cards": 6
+      }
+    ],
+    "extra": [
+      {
+        "tab": "overview",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "movements",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "customers",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "guides",
+        "toggle": true,
+        "cards": 6
+      }
+    ],
+    "bands": [
+      {
+        "tab": "overview",
+        "toggle": true,
+        "cards": 6
+      },
+      {
+        "tab": "customers",
+        "toggle": true,
+        "cards": 6
+      }
+    ]
+  },
+  "abc_text_icon": true,
+  "status_text": true,
+  "desktop_overflow": 0,
+  "tablet_overflow": 0,
+  "mobile_overflow": 0,
+  "errors": []
+}
